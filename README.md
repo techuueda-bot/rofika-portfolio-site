@@ -1,5 +1,9 @@
 # RO FIKA
 
+## Live Site
+
+https://techuueda-bot.github.io/rofika-portfolio-site/
+
 ## 概要
 
 RO FIKAは、架空カフェを題材にした1ページ構成のブランドサイトです。
