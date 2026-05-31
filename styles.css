@@ -226,6 +226,16 @@ h3 {
   text-transform: uppercase;
 }
 
+.copy-accent {
+  max-width: 390px;
+  margin: 20px 0 0;
+  color: rgba(45, 57, 53, 0.46);
+  font-size: clamp(11px, 1.05vw, 13px);
+  font-weight: 650;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
 .jp-copy {
   max-width: 560px;
   color: rgba(38, 49, 47, 0.72);
@@ -441,6 +451,12 @@ h3 {
   align-items: center;
 }
 
+.concept-text h2 {
+  max-width: 11ch;
+  font-size: clamp(38px, 5.2vw, 76px);
+  line-height: 1;
+}
+
 .window-stack {
   position: relative;
   min-height: 610px;
@@ -530,11 +546,11 @@ h3 {
 }
 
 .menu-section h2 {
-  max-width: 12ch;
+  max-width: 16ch;
   color: rgba(45, 57, 53, 0.82);
   font-size: clamp(36px, 4.8vw, 64px);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.08;
 }
 
 .menu-intro {
@@ -567,9 +583,19 @@ h3 {
 }
 
 .menu-group h3 {
+  display: grid;
+  gap: 7px;
   color: rgba(45, 57, 53, 0.86);
   font-size: clamp(28px, 3.6vw, 46px);
   font-weight: 740;
+}
+
+.menu-group h3 small {
+  color: rgba(45, 57, 53, 0.48);
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .menu-dot {
@@ -726,10 +752,9 @@ h3 {
   align-items: center;
   padding: 18px 0;
   color: rgba(45, 57, 53, 0.78);
-  font-size: clamp(17px, 1.9vw, 26px);
+  font-size: clamp(16px, 1.65vw, 23px);
   font-weight: 700;
-  line-height: 1.05;
-  text-transform: lowercase;
+  line-height: 1.22;
 }
 
 .fika-list li::before {
@@ -839,12 +864,12 @@ h3 {
 }
 
 .gallery-heading h2 {
-  max-width: 8ch;
+  max-width: 12ch;
   margin-bottom: 18px;
   color: rgba(45, 57, 53, 0.66);
   font-size: clamp(30px, 3.3vw, 48px);
   font-weight: 660;
-  line-height: 1;
+  line-height: 1.14;
 }
 
 .gallery-lead {
@@ -1012,6 +1037,10 @@ h3 {
   margin-bottom: 0;
   font-size: clamp(20px, 3vw, 36px);
   font-weight: 700;
+}
+
+.site-footer .copy-accent {
+  margin-top: 12px;
 }
 
 .footer-info {
