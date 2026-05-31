@@ -452,9 +452,18 @@ h3 {
 }
 
 .concept-text h2 {
-  max-width: 11ch;
-  font-size: clamp(38px, 5.2vw, 76px);
-  line-height: 1;
+  max-width: 13ch;
+  font-size: clamp(30px, 3.8vw, 52px);
+  font-weight: 680;
+  line-height: 1.08;
+}
+
+.concept-text .lead {
+  max-width: 560px;
+  color: rgba(45, 57, 53, 0.66);
+  font-size: clamp(17px, 1.85vw, 24px);
+  font-weight: 500;
+  line-height: 1.82;
 }
 
 .window-stack {
@@ -546,11 +555,11 @@ h3 {
 }
 
 .menu-section h2 {
-  max-width: 16ch;
-  color: rgba(45, 57, 53, 0.82);
-  font-size: clamp(36px, 4.8vw, 64px);
-  font-weight: 700;
-  line-height: 1.08;
+  max-width: 18ch;
+  color: rgba(45, 57, 53, 0.76);
+  font-size: clamp(28px, 3.8vw, 48px);
+  font-weight: 660;
+  line-height: 1.18;
 }
 
 .menu-intro {
@@ -579,20 +588,21 @@ h3 {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .menu-group h3 {
   display: grid;
-  gap: 7px;
-  color: rgba(45, 57, 53, 0.86);
-  font-size: clamp(28px, 3.6vw, 46px);
-  font-weight: 740;
+  gap: 6px;
+  color: rgba(45, 57, 53, 0.72);
+  font-size: clamp(22px, 2.7vw, 32px);
+  font-weight: 660;
+  line-height: 1.05;
 }
 
 .menu-group h3 small {
-  color: rgba(45, 57, 53, 0.48);
-  font-size: clamp(11px, 1vw, 13px);
+  color: rgba(45, 57, 53, 0.4);
+  font-size: clamp(10px, 0.9vw, 12px);
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
@@ -600,10 +610,10 @@ h3 {
 
 .menu-dot {
   flex: 0 0 auto;
-  width: 44px;
+  width: 34px;
   aspect-ratio: 1.42;
   border-radius: 50%;
-  opacity: 0.78;
+  opacity: 0.58;
 }
 
 .menu-dot-blue {
@@ -653,7 +663,7 @@ h3 {
     radial-gradient(ellipse at 38% 70%, rgba(216, 184, 137, 0.28) 0 10%, transparent 11%),
     linear-gradient(112deg, rgba(255, 250, 213, 0.56), rgba(205, 234, 240, 0.5));
   box-shadow: 0 18px 46px rgba(68, 86, 78, 0.07);
-  opacity: 0.68;
+  opacity: 0.48;
 }
 
 .menu-window-motif::before {
@@ -703,21 +713,21 @@ h3 {
 }
 
 .fika-copy h2 {
-  max-width: 11ch;
+  max-width: 14ch;
   margin-bottom: 20px;
-  color: rgba(45, 57, 53, 0.76);
-  font-size: clamp(34px, 4.5vw, 62px);
-  font-weight: 700;
-  line-height: 1;
+  color: rgba(45, 57, 53, 0.72);
+  font-size: clamp(30px, 3.8vw, 50px);
+  font-weight: 660;
+  line-height: 1.08;
 }
 
 .fika-lead {
   max-width: 390px;
   margin-bottom: 18px;
-  color: rgba(45, 57, 53, 0.66);
-  font-size: clamp(18px, 2vw, 25px);
-  font-weight: 650;
-  line-height: 1.35;
+  color: rgba(45, 57, 53, 0.62);
+  font-size: clamp(16px, 1.65vw, 21px);
+  font-weight: 540;
+  line-height: 1.72;
 }
 
 .fika-flow {
@@ -751,10 +761,14 @@ h3 {
   display: grid;
   align-items: center;
   padding: 18px 0;
-  color: rgba(45, 57, 53, 0.78);
-  font-size: clamp(16px, 1.65vw, 23px);
-  font-weight: 700;
+  color: rgba(45, 57, 53, 0.7);
+  font-size: clamp(15px, 1.45vw, 20px);
+  font-weight: 650;
   line-height: 1.22;
+}
+
+.fika-list li span {
+  white-space: nowrap;
 }
 
 .fika-list li::before {
@@ -1201,7 +1215,7 @@ h3 {
   }
 
   .menu-section h2 {
-    font-size: clamp(32px, 9.8vw, 44px);
+    font-size: clamp(29px, 8.8vw, 38px);
   }
 
   .menu-intro {
@@ -1212,7 +1226,7 @@ h3 {
     top: -18px;
     right: 4px;
     width: 78px;
-    opacity: 0.56;
+    opacity: 0.38;
   }
 
   .fika-section {
@@ -1221,11 +1235,11 @@ h3 {
   }
 
   .fika-copy h2 {
-    font-size: clamp(30px, 9vw, 40px);
+    font-size: clamp(28px, 8vw, 36px);
   }
 
   .fika-lead {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .fika-flow {
@@ -1248,7 +1262,7 @@ h3 {
     gap: 18px;
     padding: 13px 0;
     border-bottom: 1px solid rgba(45, 57, 53, 0.08);
-    font-size: clamp(20px, 6vw, 25px);
+    font-size: clamp(17px, 5vw, 20px);
   }
 
   .fika-list li::before {
