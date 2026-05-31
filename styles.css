@@ -294,6 +294,30 @@ h3 {
     linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.28));
 }
 
+.window-scene-photo img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.74;
+  filter: saturate(0.92) brightness(1.03) contrast(0.96);
+}
+
+.window-scene-photo::before {
+  z-index: 1;
+}
+
+.window-scene-photo::after {
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.32), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08) 42%, rgba(255, 255, 255, 0.26)),
+    radial-gradient(ellipse at 78% 22%, rgba(255, 255, 255, 0.3), transparent 26%);
+}
+
 .window-scene-hero {
   background-image:
     linear-gradient(90deg, rgba(255, 255, 255, 0.42) 0 16%, transparent 16% 100%),
