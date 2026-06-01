@@ -741,68 +741,82 @@ h3 {
 
 .fika-flow {
   position: relative;
-  padding: clamp(34px, 5vw, 58px) 0;
+  padding: clamp(24px, 4vw, 44px) 0;
 }
 
 .fika-flow::before {
   position: absolute;
-  top: calc(50% + 4px);
-  right: 0;
-  left: 0;
-  height: 1px;
+  top: clamp(42px, 4vw, 58px);
+  bottom: clamp(74px, 7vw, 104px);
+  left: clamp(8px, 1.2vw, 14px);
+  width: 1px;
   content: "";
-  background: linear-gradient(90deg, rgba(45, 57, 53, 0.07), rgba(184, 219, 231, 0.14), rgba(246, 232, 141, 0.18), rgba(45, 57, 53, 0.05));
+  background: linear-gradient(180deg, rgba(45, 57, 53, 0.02), rgba(184, 219, 231, 0.16), rgba(246, 232, 141, 0.14), rgba(45, 57, 53, 0.02));
 }
 
 .fika-list {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 2.4vw, 28px);
+  max-width: 520px;
+  gap: clamp(16px, 2.2vw, 24px);
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 clamp(2px, 0.6vw, 8px);
   list-style: none;
 }
 
 .fika-list li {
-  min-height: 92px;
-  display: grid;
+  min-height: auto;
+  display: flex;
   align-items: center;
-  padding: 18px 0;
-  color: rgba(45, 57, 53, 0.7);
-  font-size: clamp(15px, 1.45vw, 20px);
-  font-weight: 650;
-  line-height: 1.22;
+  gap: clamp(14px, 2vw, 20px);
+  padding: 0;
+  color: rgba(45, 57, 53, 0.68);
+  font-size: clamp(16px, 1.55vw, 21px);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.fika-list li:nth-child(2) {
+  margin-left: clamp(14px, 2.2vw, 32px);
+}
+
+.fika-list li:nth-child(3) {
+  margin-left: clamp(28px, 4vw, 58px);
+}
+
+.fika-list li:nth-child(4) {
+  margin-left: clamp(42px, 5.6vw, 82px);
 }
 
 .fika-list li span {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .fika-list li::before {
-  width: clamp(14px, 2.2vw, 26px);
-  aspect-ratio: 1.6;
-  margin-bottom: 15px;
+  flex: 0 0 auto;
+  width: clamp(10px, 1.4vw, 16px);
+  aspect-ratio: 1;
   content: "";
   border-radius: 50%;
-  background: rgba(184, 219, 231, 0.38);
+  background: rgba(184, 219, 231, 0.3);
 }
 
 .fika-list li:nth-child(2)::before {
-  background: rgba(246, 232, 141, 0.38);
+  background: rgba(246, 232, 141, 0.3);
 }
 
 .fika-list li:nth-child(3)::before {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: inset 0 0 0 1px rgba(184, 219, 231, 0.2);
+  background: rgba(255, 255, 255, 0.44);
+  box-shadow: inset 0 0 0 1px rgba(184, 219, 231, 0.16);
 }
 
 .fika-list li:nth-child(4)::before {
-  background: rgba(239, 212, 215, 0.34);
+  background: rgba(239, 212, 215, 0.28);
 }
 
 .fika-window-motif {
+  display: none;
   position: absolute;
   top: 10px;
   right: 8%;
@@ -1271,31 +1285,46 @@ h3 {
   }
 
   .fika-flow {
-    padding: 16px 0 0;
+    padding: 18px 0 0;
   }
 
   .fika-flow::before {
-    top: 32px;
+    top: 36px;
+    bottom: 72px;
+    left: 12px;
   }
 
   .fika-list {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 14px;
+    margin-left: 0;
   }
 
   .fika-list li {
     min-height: auto;
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 13px 0;
-    border-bottom: 1px solid rgba(45, 57, 53, 0.08);
-    font-size: clamp(17px, 5vw, 20px);
+    gap: 14px;
+    padding: 0;
+    border-bottom: 0;
+    font-size: clamp(16px, 4.8vw, 19px);
+  }
+
+  .fika-list li:nth-child(2) {
+    margin-left: 12px;
+  }
+
+  .fika-list li:nth-child(3) {
+    margin-left: 24px;
+  }
+
+  .fika-list li:nth-child(4) {
+    margin-left: 36px;
   }
 
   .fika-list li::before {
     flex: 0 0 auto;
-    width: 24px;
+    width: 14px;
     margin-bottom: 0;
   }
 
