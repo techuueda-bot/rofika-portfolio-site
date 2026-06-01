@@ -746,12 +746,12 @@ h3 {
 
 .fika-flow::before {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 4px);
   right: 0;
   left: 0;
   height: 1px;
   content: "";
-  background: linear-gradient(90deg, rgba(45, 57, 53, 0.1), rgba(184, 219, 231, 0.22), rgba(246, 232, 141, 0.34), rgba(45, 57, 53, 0.08));
+  background: linear-gradient(90deg, rgba(45, 57, 53, 0.07), rgba(184, 219, 231, 0.14), rgba(246, 232, 141, 0.18), rgba(45, 57, 53, 0.05));
 }
 
 .fika-list {
@@ -781,32 +781,32 @@ h3 {
 }
 
 .fika-list li::before {
-  width: clamp(18px, 2.8vw, 34px);
+  width: clamp(14px, 2.2vw, 26px);
   aspect-ratio: 1.6;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   content: "";
   border-radius: 50%;
-  background: rgba(184, 219, 231, 0.62);
+  background: rgba(184, 219, 231, 0.38);
 }
 
 .fika-list li:nth-child(2)::before {
-  background: rgba(246, 232, 141, 0.62);
+  background: rgba(246, 232, 141, 0.38);
 }
 
 .fika-list li:nth-child(3)::before {
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: inset 0 0 0 1px rgba(184, 219, 231, 0.34);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(184, 219, 231, 0.2);
 }
 
 .fika-list li:nth-child(4)::before {
-  background: rgba(239, 212, 215, 0.62);
+  background: rgba(239, 212, 215, 0.34);
 }
 
 .fika-window-motif {
   position: absolute;
-  top: 6px;
+  top: 10px;
   right: 8%;
-  width: clamp(76px, 10vw, 128px);
+  width: clamp(64px, 8vw, 104px);
   aspect-ratio: 1.18;
   pointer-events: none;
   border: 1px solid rgba(255, 255, 255, 0.62);
@@ -816,7 +816,7 @@ h3 {
     radial-gradient(ellipse at 38% 72%, rgba(216, 184, 137, 0.24) 0 9%, transparent 10%),
     linear-gradient(112deg, rgba(255, 250, 213, 0.5), rgba(205, 234, 240, 0.44));
   box-shadow: 0 18px 46px rgba(68, 86, 78, 0.07);
-  opacity: 0.64;
+  opacity: 0.22;
 }
 
 .fika-window-motif::before {
@@ -1262,7 +1262,7 @@ h3 {
   }
 
   .fika-flow::before {
-    top: 34px;
+    top: 32px;
   }
 
   .fika-list {
@@ -1282,15 +1282,15 @@ h3 {
 
   .fika-list li::before {
     flex: 0 0 auto;
-    width: 30px;
+    width: 24px;
     margin-bottom: 0;
   }
 
   .fika-window-motif {
     top: -4px;
     right: 2px;
-    width: 82px;
-    opacity: 0.54;
+    width: 68px;
+    opacity: 0.16;
   }
 
   .fika-aftercopy {
