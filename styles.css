@@ -960,7 +960,9 @@ h3 {
   inset: 0;
   pointer-events: none;
   content: "";
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 52%, rgba(255, 255, 255, 0.18));
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 48%, rgba(255, 255, 255, 0.22)),
+    linear-gradient(rgba(248, 244, 233, 0.08), rgba(248, 244, 233, 0.08));
 }
 
 .gallery-visual img {
@@ -968,6 +970,17 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(0.9) brightness(1.03) contrast(0.94);
+}
+
+.gallery-visual-sweet img {
+  filter: saturate(0.78) brightness(1.08) contrast(0.88);
+}
+
+.gallery-visual-sweet::after {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.1) 48%, rgba(255, 255, 255, 0.24)),
+    linear-gradient(rgba(248, 244, 233, 0.16), rgba(248, 244, 233, 0.16));
 }
 
 .gallery-item figcaption {
