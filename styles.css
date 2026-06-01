@@ -466,6 +466,14 @@ h3 {
   line-height: 1.82;
 }
 
+.concept-note {
+  margin: -4px 0 0;
+  color: rgba(45, 57, 53, 0.54);
+  font-size: clamp(13px, 1.08vw, 15px);
+  font-weight: 520;
+  line-height: 1.8;
+}
+
 .window-stack {
   position: relative;
   min-height: 610px;
@@ -588,6 +596,15 @@ h3 {
 
 .menu-group-heading {
   margin-bottom: 22px;
+}
+
+.menu-price {
+  margin: 12px 0 0;
+  color: rgba(45, 57, 53, 0.48);
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 560;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
 }
 
 .menu-group h3 {
@@ -1095,11 +1112,45 @@ h3 {
 
 .footer-info {
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(170px, 1fr));
+  gap: 12px 26px;
   color: rgba(38, 49, 47, 0.68);
   font-style: normal;
   font-weight: 600;
-  text-align: right;
+  text-align: left;
+}
+
+.footer-info span {
+  display: grid;
+  gap: 4px;
+}
+
+.footer-info b {
+  color: rgba(38, 49, 47, 0.42);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.footer-info em,
+.footer-info a {
+  color: rgba(38, 49, 47, 0.72);
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-style: normal;
+  font-weight: 560;
+  line-height: 1.55;
+}
+
+.footer-info a {
+  width: fit-content;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(38, 49, 47, 0.26);
+}
+
+.footer-instagram {
+  grid-column: span 2;
 }
 
 [data-drift] {
@@ -1387,7 +1438,13 @@ h3 {
   }
 
   .footer-info {
+    grid-template-columns: 1fr;
+    gap: 11px;
     text-align: left;
+  }
+
+  .footer-instagram {
+    grid-column: auto;
   }
 
   [data-drift] {
