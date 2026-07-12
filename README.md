@@ -1,136 +1,57 @@
-# RO FIKA
+# RO FIKA — Renewal
 
-RO FIKA is a fictional one-page website for a small summer cafe.
+架空の小さな夏のカフェ「RO FIKA」のサイト。
+「窓辺の光」をモーションの主役にした、ショーケース仕様の1ページ構成。
 
 ## Live Site
 
 https://techuueda-bot.github.io/rofika-portfolio-site/
 
-## Overview
+## コンセプト
 
-RO FIKAは、「架空の小さな夏のカフェ」を題材にした1ページ構成のWebサイトです。
-冷たい飲みものと焼き菓子をそばに、窓辺で静かにひと息つける時間を、淡い色、余白、窓辺の光、実写真を使って表現しました。
+**「光を、動かす。」**
+淡い生成り×深緑×余白の世界観に、光そのものをスクロールで移ろわせる演出を加えている。
+FIKA TIMEセクションでは、スクロールに合わせて光の色温度が午後(白金)→夕方(琥珀)へ変化し、時計が 1:00 PM → 5:10 PM へ進む。
 
-## Portfolio Copy
+## 構成(幕割り)
 
-余白と窓辺の光で設計した、静かな夏のカフェサイト
+1. ローディング — 窓に光が満ちて開演(5秒タイムアウト保険付き)
+2. ヒーロー — 全面タイポ+背面にWebGLの木漏れ日
+3. Concept — 文字点灯(スクロール同期で1文字ずつ照らされる)
+4. Menu — 左sticky見出し+光マーカーのホバー
+5. FIKA TIME — ★最大の見せ場。光の移ろい+時計
+6. Gallery — 横スクロールギャラリー(pin+scrub)
+7. Info — 回転テキストリング+Instagram導線
 
-## Concept
+## 技術
 
-光の入る、小さな夏のカフェ。
+- HTML / CSS / JavaScript(ビルド不要の静的サイト)
+- CDN: GSAP 3.12.5 + ScrollTrigger / Three.js r128 / Lenis 1.1.13 / Google Fonts
+  **→ オフラインでは動きません。**
+- WebGL非対応環境は `body.no-webgl` でCSSグラデーションに自動フォールバック
+- reduced-motion環境では「アニメーションを停止する」ボタンを表示(押すと静的表示に切替)
 
-冷たい飲みものと、焼き菓子。
-窓辺で、少しだけひと息。
+## どこを触れば何が変わるか
 
-RO FIKAでは、カフェの情報を並べるだけではなく、「ここならひとりでも静かに過ごせそう」と感じられる空気を大切にしました。
+| 変えたいもの | 場所 |
+|---|---|
+| 色(生成り・深緑・光の色) | `assets/css/style.css` の `:root`(先頭のトークン) |
+| メニューの品目・価格 | `index.html` の `<!-- 3. Menu -->` セクション |
+| 営業時間などの店舗情報 | `index.html` の `<!-- 6. Info -->` セクション |
+| FIKA TIMEの時刻範囲 | `assets/js/showcase.js` の `START` / `END` |
+| 光の強さ・色 | `assets/js/showcase.js` の fragmentShader 内 `noon` / `dusk` / `alpha` |
+| 文字点灯のコピー | `index.html` の `data-illuminate` 要素(`<br>`区切りで行になる) |
+| グレインの強さ | `assets/css/style.css` の `.grain { opacity }` |
+| ローディングの雰囲気 | `.loader` 一式(CSS)と `initLoader()`(main.js) |
 
-## Sections
-
-1. Hero
-   - RO FIKAの第一印象を伝える導入。
-   - 大きなロゴタイプと窓辺の写真で、明るく静かなカフェ感を作っています。
-2. Concept
-   - 「光の入る窓辺で、ひと息。」という価値を短いコピーで説明。
-   - 「ひとりで過ごす午後にも。」を加え、入りやすさも補強しています。
-3. Menu
-   - 冷たい飲みものと焼き菓子を、日本語中心で読みやすく整理。
-   - 個別価格ではなく、飲みもの650円〜 / 焼き菓子420円〜の価格帯を添えています。
-4. FIKA TIME
-   - RO FIKAで過ごす時間を、短い言葉と余白で表現。
-5. Gallery
-   - 窓辺、グラス、焼き菓子、午後の光を感じる実写真を配置。
-   - 写真の実在感を優先し、過度な動きは加えていません。
-6. Footer Info
-   - Open / Close / Place / Seats / Payment / Instagram を掲載。
-   - Instagram導線は「季節のメニューは Instagram へ」とし、見る理由が伝わるようにしました。
-
-## Design
-
-- 淡い夏の色味を中心にした、明るく低彩度の配色
-- 窓辺の光を感じる写真と小窓モチーフ
-- 余白を広めに取った静かな構成
-- 日本語コピーを主役にし、英語は小さなアクセントとして使用
-- Menuは作品的にしすぎず、日本のカフェサイトとして自然に読める構成へ調整
-- Galleryは実写真を使い、架空サイトでもカフェとしての実在感が出るようにしています
-
-## Marketing Notes
-
-完成前の調整では、見た目の雰囲気だけで終わらないように、来店前の安心感を少し足しました。
-
-- Menuに価格帯を追加
-- Footer Infoに営業時間、定休日、場所、席数、支払い、Instagramを追加
-- Instagram導線を「季節のメニューは Instagram へ」に変更
-- Conceptに「ひとりで過ごす午後にも。」を追加
-
-情報を増やしすぎず、RO FIKAの静かな余白感を保ちながら、「ここなら行けそう」と感じられる最低限の実用性を目指しました。
-
-## Implementation
-
-- HTML / CSS / JavaScript
-- 1ページ完結の縦スクロール構成
-- CSS中心の軽いビジュアル表現
-- `data-drift` による控えめなスクロール演出
-- Galleryには `data-drift` を付けず、写真の実在感と安定性を優先
-- `prefers-reduced-motion` に対応
-- スマホでは文字サイズ、余白、Galleryの2列表示、Footer Infoの1列表示を調整
-
-## Screenshots
-
-### Hero
-
-![RO FIKA Hero](screenshots/rofika-01-hero.png)
-
-### Concept + Window Scene
-
-![Concept Window](screenshots/rofika-02-concept-window.png)
-
-### Menu
-
-![Menu](screenshots/rofika-03-menu.png)
-
-### FIKA Time + Gallery
-
-![FIKA Time and Gallery](screenshots/rofika-04-fika-gallery.png)
-
-### Footer Info
-
-![Footer Info](screenshots/rofika-05-footer.png)
-
-### Mobile View
-
-![Mobile Hero](screenshots/rofika-mobile-01-hero.png)
-
-![Mobile Gallery](screenshots/rofika-mobile-02-gallery.png)
-
-![Mobile Info](screenshots/rofika-mobile-03-info.png)
-
-## ローカルでの確認方法
-
-以下のコマンドで簡易サーバーを起動し、ブラウザで確認できます。
+## ローカル確認
 
 ```bash
-python3 -m http.server 8000
+npx http-server . -p 8823
+# → http://localhost:8823
 ```
 
-```text
-http://localhost:8000
-```
+## 品質メモ
 
-## Quality Checks
-
-- `h1` はHeroに1つ
-- 各主要セクションは `h2` で整理
-- Menu内は `h3` を使用
-- Skip linkあり
-- 横スクロールなし
-- Footer最下部までスクロール確認済み
-- コンソールエラーなし
-- Gallery内 `data-drift` は0
-- Chromeクラッシュなし
-
-## Learning
-
-この作品では、動きを増やすことよりも、静けさと見やすさを優先しました。
-特にGalleryは実写真の空気感を見せる場所として扱い、スクロール演出の対象から外しています。
-
-また、制作後半ではマーケティング視点から見直し、価格帯や店舗情報を最小限加えることで、架空サイトでありながら「カフェとして読める」状態へ整えました。
+- 写真は2倍解像度相当で書き出し済み
+- 文字コードは全ファイルUTF-8(BOMなし)

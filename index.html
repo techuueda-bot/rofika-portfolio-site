@@ -1,293 +1,287 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="RO FIKA is a fictional summer cafe site for quiet pauses, cold drinks, baked sweets, and light-filled windows."
-    />
-    <title>RO FIKA | Summer FIKA Stand</title>
-    <link rel="stylesheet" href="styles.css?v=fika-flow-1" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RO FIKA | 光の入る、小さな夏のカフェ</title>
+  <meta name="description" content="RO FIKAは、窓辺の光とともに過ごす架空の小さな夏のカフェ。冷たい飲みものと焼き菓子をそばに、午後の光が移ろう時間をWebで体験できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RO FIKA | 光の入る、小さな夏のカフェ">
+  <meta property="og:description" content="窓辺の光とともに過ごす、架空の小さな夏のカフェ。午後の光が移ろう時間をWebで。">
+  <meta property="og:url" content="https://techuueda-bot.github.io/rofika-portfolio-site/">
+  <meta property="og:image" content="https://techuueda-bot.github.io/rofika-portfolio-site/assets/img/common/ogp.png">
+  <meta property="og:site_name" content="RO FIKA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://techuueda-bot.github.io/rofika-portfolio-site/">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/img/common/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Shippori+Mincho:wght@500&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RO FIKA",
+    "url": "https://techuueda-bot.github.io/rofika-portfolio-site/",
+    "description": "窓辺の光とともに過ごす、架空の小さな夏のカフェのコンセプトサイト。"
+  }
+  </script>
+</head>
+<body class="p-home">
 
-    <header class="site-header" aria-label="RO FIKA header">
-      <a class="site-mark" href="#top" aria-label="RO FIKA home">RO FIKA</a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#concept">Concept</a>
-        <a href="#menu">Menu</a>
-        <a href="#info">Info</a>
-      </nav>
-    </header>
+  <a class="skip-link" href="#main">本文へスキップ</a>
 
-    <main id="main">
-      <section id="top" class="section hero-section" aria-labelledby="hero-title">
-        <div class="ambient ambient-lemon" aria-hidden="true"></div>
-        <div class="ambient ambient-blue" aria-hidden="true"></div>
+  <!-- ローディング: 窓に光が満ちて開演 -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__window">
+      <span class="loader__light"></span>
+      <span class="loader__sash loader__sash--v"></span>
+      <span class="loader__sash loader__sash--h"></span>
+    </div>
+    <p class="loader__logo">RO FIKA</p>
+    <p class="loader__count"><span class="js-loader-count">0</span>%</p>
+  </div>
 
-        <div class="section-inner hero-layout">
-          <div class="hero-copy" data-drift="text">
-            <p class="eyebrow">Summer FIKA Stand</p>
-            <h1 id="hero-title">RO FIKA</h1>
-            <p class="hero-line">
-              光の入る、<br />
-              小さな夏のカフェ。
-            </p>
-            <p class="jp-copy">
-              冷たい飲みものと、焼き菓子。<br />
-              窓辺で、少しだけひと息。
-            </p>
-            <p class="hero-note">A small pause in summer.</p>
-          </div>
+  <!-- 背面: 窓辺の光(WebGL)。失敗時は body.no-webgl でCSS代替 -->
+  <canvas class="gl-light" aria-hidden="true"></canvas>
+  <canvas class="grain" aria-hidden="true"></canvas>
 
-          <div class="hero-window window-frame" data-drift="window">
-            <div
-              class="window-scene window-scene-hero window-scene-photo window-scene-hero-photo"
-            >
-              <img
-                src="assets/hero/hero-window-soft-cafe.png"
-                alt="穏やかな光の中で過ごすカフェのひととき"
-              />
-            </div>
-            <span class="window-caption">Cold drinks and light</span>
+  <header class="site-header">
+    <a class="site-header__logo" href="#top">RO FIKA</a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="メニューを開く" aria-controls="global-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション">
+      <ul>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#fika-time">Fika Time</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#info">Info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. ヒーロー: 全面タイポ+背面の光 -->
+    <section id="top" class="hero" aria-label="RO FIKA">
+      <div class="hero__inner">
+        <p class="hero__eyebrow"><span class="hero__eyebrow-line">SUMMER FIKA STAND</span></p>
+        <h1 class="hero__title">
+          <span class="hero__title-line"><span class="hero__title-word">RO</span></span>
+          <span class="hero__title-line"><span class="hero__title-word">FIKA</span></span>
+        </h1>
+        <p class="hero__copy">
+          <span class="hero__copy-line">光の入る、</span>
+          <span class="hero__copy-line">小さな夏のカフェ。</span>
+        </p>
+        <p class="hero__sub">cold drinks, baked sweets, and a window full of light.</p>
+      </div>
+
+      <figure class="hero__window" data-cursor>
+        <img src="assets/img/hero/hero-window.jpg" alt="穏やかな光の中で過ごすカフェのひととき" width="480" height="360">
+        <figcaption class="hero__window-caption">cold drinks and light</figcaption>
+      </figure>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-label">scroll</span>
+        <span class="hero__scroll-bar"></span>
+      </div>
+    </section>
+
+    <!-- 2. Concept: 文字点灯(スクロールで光が文字を照らす) -->
+    <section id="concept" class="concept" aria-labelledby="concept-title">
+      <div class="concept__sticky">
+        <div class="concept__head">
+          <span class="section-en">Concept</span>
+          <h2 id="concept-title" class="u-visually-hidden">コンセプト</h2>
+        </div>
+        <p class="concept__text" data-illuminate>
+          光の入る窓辺で、ひと息。<br>
+          冷たい飲みものと、焼き菓子をそばに。<br>
+          外の光を眺めながら過ごす、小さな時間。<br>
+          ひとりで過ごす午後にも。
+        </p>
+        <p class="concept__en">a window full of light.</p>
+      </div>
+    </section>
+
+    <!-- 3. Menu: 左sticky見出し+右リスト -->
+    <section id="menu" class="menu section" aria-labelledby="menu-title">
+      <div class="container menu__layout">
+        <div class="menu__side">
+          <div class="menu__side-sticky">
+            <span class="section-en">Menu</span>
+            <h2 id="menu-title" class="menu__title">冷たい飲みものと、<br>焼き菓子。</h2>
+            <figure class="menu__photo js-reveal">
+              <img src="assets/img/concept/window-dessert.jpg" alt="淡く重なる焼き菓子と甘い余韻" width="600" height="800" loading="lazy">
+            </figure>
           </div>
         </div>
-      </section>
 
-      <section id="concept" class="section concept-section" aria-labelledby="concept-title">
-        <div class="section-inner concept-layout">
-          <div class="concept-text" data-drift="text">
-            <p class="eyebrow">Concept</p>
-            <h2 id="concept-title">
-              光の入る窓辺で、<br />
-              ひと息。
-            </h2>
-            <p class="lead">
-              冷たい飲みものと焼き菓子をそばに、<br />
-              外の光を眺めながら過ごす小さな時間。
-            </p>
-            <p class="concept-note">ひとりで過ごす午後にも。</p>
-            <p class="copy-accent">A window full of light.</p>
-          </div>
-
-          <div class="window-stack" aria-label="RO FIKA window scenes">
-            <div class="window-frame concept-window concept-window-large" data-drift="window">
-              <div
-                class="window-scene window-scene-blue window-scene-photo"
-              >
-                <img
-                  src="assets/hero/hero-window-soft-cafe.png"
-                  alt="ガラス越しにぼんやり見える窓辺の席とやわらかな光"
-                />
-              </div>
-              <span class="window-caption concept-caption">Window / Summer light</span>
-            </div>
-            <div class="window-frame concept-window concept-window-small" data-drift="window">
-              <div
-                class="window-scene window-scene-berry window-scene-photo window-scene-dessert-soft"
-              >
-                <img
-                  src="assets/concept/window-dessert-soft.png"
-                  alt="淡く重なる焼き菓子と甘い余韻"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="menu" class="section menu-section" aria-labelledby="menu-title">
-        <div class="section-inner">
-          <div class="section-heading" data-drift="text">
-            <p class="eyebrow">Menu</p>
-            <h2 id="menu-title">MENU</h2>
-            <p class="menu-intro">冷たい飲みものと、焼き菓子。</p>
-          </div>
-
-          <div class="menu-columns">
-            <section class="menu-group" aria-labelledby="drinks-title">
-              <div class="menu-group-heading">
-                <h3 id="drinks-title"><span>冷たい飲みもの</span><small>Cold drinks</small></h3>
-                <p class="menu-price">650円〜</p>
-              </div>
-              <ul class="menu-list">
-                <li>
-                  <span>レモンアイスコーヒー</span>
-                  <small>Iced Lemon Coffee</small>
-                  <p>柑橘の明るさと、やわらかな苦み。</p>
-                </li>
-                <li>
-                  <span>ベリーミルクソーダ</span>
-                  <small>Berry Milk Soda</small>
-                  <p>ベリーの色と、ミルクの泡。</p>
-                </li>
-                <li>
-                  <span>水出しのお茶</span>
-                  <small>Cold Brew Tea</small>
-                  <p>すっきり、静かに甘い余韻。</p>
-                </li>
-              </ul>
-            </section>
-
-            <section class="menu-group" aria-labelledby="sweets-title">
-              <div class="menu-group-heading">
-                <h3 id="sweets-title"><span>焼き菓子</span><small>Baked sweets</small></h3>
-                <p class="menu-price">420円〜</p>
-              </div>
-              <ul class="menu-list">
-                <li>
-                  <span>レモンカルダモンケーキ</span>
-                  <small>Lemon Cardamom Cake</small>
-                  <p>レモンの香りと、やさしいスパイス。</p>
-                </li>
-                <li>
-                  <span>ブルーベリークランブル</span>
-                  <small>Blueberry Crumble</small>
-                  <p>やわらかな果実と、バターの香り。</p>
-                </li>
-                <li>
-                  <span>バタースコーン</span>
-                  <small>Butter Scone</small>
-                  <p>温めて、クリームを添えて。</p>
-                </li>
-              </ul>
-            </section>
-          </div>
-        </div>
-      </section>
-
-      <section id="fika-time" class="section fika-section" aria-labelledby="fika-title">
-        <div class="section-inner fika-layout">
-          <div class="fika-copy" data-drift="text">
-            <p class="eyebrow">FIKA Time</p>
-            <h2 id="fika-title">窓辺で、ひと息。</h2>
-            <p class="fika-lead">
-              夏の午後に、<br />
-              飲んで、味わって、<br />
-              外を少し眺める。
-            </p>
-            <p class="copy-accent">A quiet rhythm for a summer afternoon.</p>
-          </div>
-
-          <div class="fika-flow" aria-label="FIKA time rhythm" data-drift="window">
-            <span class="fika-window-motif" aria-hidden="true"></span>
-            <ul class="fika-list">
-              <li><span>冷たいものをそばに。</span></li>
-              <li><span>甘いものを少し。</span></li>
-              <li><span>窓の光を眺めて、</span></li>
-              <li><span>静かな時間へ。</span></li>
+        <div class="menu__lists">
+          <section class="menu-group" aria-labelledby="drinks-title">
+            <header class="menu-group__head js-reveal">
+              <h3 id="drinks-title" class="menu-group__title">冷たい飲みもの <small>cold drinks</small></h3>
+              <p class="menu-group__price">650円〜</p>
+            </header>
+            <ul class="menu-group__list">
+              <li class="menu-item js-reveal" data-cursor>
+                <span class="menu-item__name"><em class="marker">レモンアイスコーヒー</em></span>
+                <span class="menu-item__en">iced lemon coffee</span>
+                <p class="menu-item__desc">柑橘の明るさと、やわらかな苦み。</p>
+              </li>
+              <li class="menu-item js-reveal" data-delay="1" data-cursor>
+                <span class="menu-item__name"><em class="marker">ベリーミルクソーダ</em></span>
+                <span class="menu-item__en">berry milk soda</span>
+                <p class="menu-item__desc">ベリーの色と、ミルクの泡。</p>
+              </li>
+              <li class="menu-item js-reveal" data-delay="2" data-cursor>
+                <span class="menu-item__name"><em class="marker">水出しのお茶</em></span>
+                <span class="menu-item__en">cold brew tea</span>
+                <p class="menu-item__desc">すっきり、静かに甘い余韻。</p>
+              </li>
             </ul>
-            <p class="fika-aftercopy">stay a little longer by the window.</p>
+          </section>
+
+          <section class="menu-group" aria-labelledby="sweets-title">
+            <header class="menu-group__head js-reveal">
+              <h3 id="sweets-title" class="menu-group__title">焼き菓子 <small>baked sweets</small></h3>
+              <p class="menu-group__price">420円〜</p>
+            </header>
+            <ul class="menu-group__list">
+              <li class="menu-item js-reveal" data-cursor>
+                <span class="menu-item__name"><em class="marker">レモンカルダモンケーキ</em></span>
+                <span class="menu-item__en">lemon cardamom cake</span>
+                <p class="menu-item__desc">レモンの香りと、やさしいスパイス。</p>
+              </li>
+              <li class="menu-item js-reveal" data-delay="1" data-cursor>
+                <span class="menu-item__name"><em class="marker">ブルーベリークランブル</em></span>
+                <span class="menu-item__en">blueberry crumble</span>
+                <p class="menu-item__desc">やわらかな果実と、バターの香り。</p>
+              </li>
+              <li class="menu-item js-reveal" data-delay="2" data-cursor>
+                <span class="menu-item__name"><em class="marker">バタースコーン</em></span>
+                <span class="menu-item__en">butter scone</span>
+                <p class="menu-item__desc">温めて、クリームを添えて。</p>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FIKA TIME: 最大の見せ場。光の色温度が午後→夕方へ移ろう -->
+    <section id="fika-time" class="fika" aria-labelledby="fika-title">
+      <div class="fika__sticky">
+        <div class="fika__head">
+          <span class="section-en section-en--light">Fika Time</span>
+          <h2 id="fika-title" class="fika__title">窓辺で、ひと息。</h2>
+        </div>
+        <p class="fika__clock" aria-hidden="true"><span class="js-fika-clock">1:00</span> <small>PM</small></p>
+        <div class="fika__phrases">
+          <p class="fika__phrase is-current">冷たいものを、そばに。</p>
+          <p class="fika__phrase">甘いものを、少し。</p>
+          <p class="fika__phrase">窓の光を、眺めて。</p>
+          <p class="fika__phrase">静かな時間へ。</p>
+        </div>
+        <p class="fika__en">a quiet rhythm for a summer afternoon.</p>
+      </div>
+    </section>
+
+    <!-- 5. Gallery: 横スクロール -->
+    <section id="gallery" class="gallery" aria-labelledby="gallery-title">
+      <div class="gallery__pin">
+        <div class="gallery__head container">
+          <span class="section-en">Gallery</span>
+          <h2 id="gallery-title" class="gallery__title">窓辺に残る、小さな景色</h2>
+        </div>
+        <div class="gallery__track">
+          <figure class="gallery__item" data-cursor>
+            <div class="gallery__visual"><img src="assets/img/gallery/window-light.jpg" alt="窓辺に差し込む夏の光" width="800" height="1421" loading="lazy"></div>
+            <figcaption>window light</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--low" data-cursor>
+            <div class="gallery__visual"><img src="assets/img/gallery/cold-glass.jpg" alt="明るい窓辺に置かれた冷たいグラス" width="800" height="1200" loading="lazy"></div>
+            <figcaption>cold glass</figcaption>
+          </figure>
+          <figure class="gallery__item" data-cursor>
+            <div class="gallery__visual"><img src="assets/img/gallery/baked-sweet.jpg" alt="テーブルに置かれた焼き菓子" width="800" height="1425" loading="lazy"></div>
+            <figcaption>baked sweet</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--low" data-cursor>
+            <div class="gallery__visual"><img src="assets/img/gallery/quiet-table.jpg" alt="静かなカフェのテーブル" width="800" height="1200" loading="lazy"></div>
+            <figcaption>quiet table</figcaption>
+          </figure>
+          <figure class="gallery__item" data-cursor>
+            <div class="gallery__visual"><img src="assets/img/gallery/summer-shade.jpg" alt="夏の日陰とやわらかな光" width="800" height="1422" loading="lazy"></div>
+            <figcaption>summer shade</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--low" data-cursor>
+            <div class="gallery__visual"><img src="assets/img/gallery/slow-afternoon.jpg" alt="ゆっくり過ごす午後のカフェ時間" width="800" height="1422" loading="lazy"></div>
+            <figcaption>slow afternoon</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Info / CTA -->
+    <section id="info" class="info section" aria-labelledby="info-title">
+      <div class="container info__layout">
+        <div class="info__brand">
+          <span class="section-en">Info</span>
+          <h2 id="info-title" class="info__title">RO FIKA</h2>
+          <p class="info__copy">窓辺で、少しだけひと息。</p>
+          <div class="info__badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path id="badge-circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"></path>
+              </defs>
+              <text>
+                <textPath href="#badge-circle">A SMALL PAUSE IN A SUMMER AFTERNOON ・ RO FIKA ・</textPath>
+              </text>
+            </svg>
+            <span class="info__badge-dot"></span>
           </div>
         </div>
-      </section>
-
-      <section id="gallery" class="section gallery-section" aria-labelledby="gallery-title">
-        <div class="section-inner gallery-layout">
-          <div class="gallery-heading">
-            <p class="eyebrow">Gallery</p>
-            <h2 id="gallery-title">
-              窓辺に残る<br />
-              小さな景色
-            </h2>
-            <p class="gallery-lead">
-              光、グラス、焼き菓子。<br />
-              午後に残る、いくつかの場面。
-            </p>
-            <p class="copy-accent">small scenes by the window.</p>
-          </div>
-
-          <div class="gallery-grid" aria-label="RO FIKA small scenes">
-            <figure
-              class="gallery-item gallery-item-tall"
-              data-image-src=""
-              data-alt="RO FIKAの窓辺に差し込む夏の光"
-            >
-              <div class="gallery-visual gallery-visual-blue">
-                <img src="assets/gallery/window-light.jpg" alt="窓辺に差し込む夏の光" loading="lazy" />
-              </div>
-              <figcaption>window light</figcaption>
-            </figure>
-            <figure
-              class="gallery-item"
-              data-image-src=""
-              data-alt="冷たいグラスを思わせる淡い光"
-            >
-              <div class="gallery-visual gallery-visual-glass">
-                <img src="assets/gallery/cold-glass.jpg" alt="明るい窓辺に置かれた冷たいグラス" loading="lazy" />
-              </div>
-              <figcaption>cold glass</figcaption>
-            </figure>
-            <figure
-              class="gallery-item gallery-item-soft"
-              data-image-src=""
-              data-alt="焼き菓子を思わせる小さな午後の場面"
-            >
-              <div class="gallery-visual gallery-visual-sweet">
-                <img src="assets/gallery/baked-sweet.jpg" alt="テーブルに置かれた焼き菓子" loading="lazy" />
-              </div>
-              <figcaption>baked sweet</figcaption>
-            </figure>
-            <figure
-              class="gallery-item gallery-item-wide"
-              data-image-src=""
-              data-alt="静かなテーブルと余白のあるカフェの時間"
-            >
-              <div class="gallery-visual gallery-visual-table">
-                <img src="assets/gallery/quiet-table.jpg" alt="静かなカフェのテーブル" loading="lazy" />
-              </div>
-              <figcaption>quiet table</figcaption>
-            </figure>
-            <figure
-              class="gallery-item"
-              data-image-src=""
-              data-alt="夏の日陰を感じる淡い窓辺の景色"
-            >
-              <div class="gallery-visual gallery-visual-shade">
-                <img src="assets/gallery/summer-shade.jpg" alt="夏の日陰とやわらかな光" loading="lazy" />
-              </div>
-              <figcaption>summer shade</figcaption>
-            </figure>
-            <figure
-              class="gallery-item gallery-item-soft"
-              data-image-src=""
-              data-alt="ゆっくり過ぎる夏の午後"
-            >
-              <div class="gallery-visual gallery-visual-afternoon">
-                <img src="assets/gallery/slow-afternoon.jpg" alt="ゆっくり過ごす午後のカフェ時間" loading="lazy" />
-              </div>
-              <figcaption>slow afternoon</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="info" class="site-footer" aria-labelledby="footer-title">
-      <div class="section-inner footer-layout">
-        <div>
-          <p class="eyebrow">Summer FIKA Stand</p>
-          <h2 id="footer-title">RO FIKA</h2>
-          <p>窓辺で、少しだけひと息。</p>
-          <p class="copy-accent">A small pause in summer.</p>
-        </div>
-        <address class="footer-info">
-          <span><b>Open</b><em>12:00 - 18:00</em></span>
-          <span><b>Close</b><em>Wednesday</em></span>
-          <span><b>Place</b><em>窓辺のある小さな通り</em></span>
-          <span><b>Seats</b><em>12席ほど / ひとり席あり</em></span>
-          <span><b>Payment</b><em>Cash / Cashless</em></span>
-          <span class="footer-instagram">
-            <b>Instagram</b>
-            <em>季節のメニューは Instagram へ</em>
-            <a href="https://www.instagram.com/" aria-label="Instagram RO FIKA">@rofika</a>
-          </span>
+        <address class="info__detail">
+          <dl class="info__list">
+            <div class="js-reveal"><dt>Open</dt><dd>12:00 – 18:00</dd></div>
+            <div class="js-reveal" data-delay="1"><dt>Close</dt><dd>Wednesday</dd></div>
+            <div class="js-reveal" data-delay="2"><dt>Place</dt><dd>窓辺のある小さな通り</dd></div>
+            <div class="js-reveal"><dt>Seats</dt><dd>12席ほど / ひとり席あり</dd></div>
+            <div class="js-reveal" data-delay="1"><dt>Payment</dt><dd>Cash / Cashless</dd></div>
+          </dl>
+          <p class="info__instagram js-reveal" data-delay="2">
+            季節のメニューは Instagram へ<br>
+            <a href="https://www.instagram.com/" data-cursor>@rofika</a>
+          </p>
         </address>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <footer class="site-footer">
+    <div class="container">
+      <p><small>&copy; 2026 RO FIKA — a fictional summer cafe.</small></p>
+    </div>
+  </footer>
+
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+  </div>
+
+  <button class="motion-stop">アニメーションを停止する</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/showcase.js" defer></script>
+</body>
 </html>
