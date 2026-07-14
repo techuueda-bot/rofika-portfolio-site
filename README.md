@@ -58,6 +58,9 @@ npx http-server . -p 8823
 サイトには、以下の季節メニュー画像を追加しています。
 
 - `assets/img/menu/light-set-v2.webp` — 光のセットの主役写真
+- `assets/img/menu/cold-brew-tea.webp` — 水出しのお茶の写真
+- `assets/img/menu/blueberry-crumble.webp` — ブルーベリークランブルの写真
+- `assets/img/menu/butter-scone.webp` — バタースコーンの写真
 - `assets/img/menu/lemon-iced-coffee.webp`
 - `assets/img/menu/berry-milk-soda.webp`
 - `assets/img/menu/lemon-cardamom-cake.webp`
