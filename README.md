@@ -51,6 +51,16 @@ npx http-server . -p 8823
 # → http://localhost:8823
 ```
 
+## 市場検証と更新方針
+
+20歳前後の女性を主対象に、RO FIKAの売りを「ひとりの午後を45分だけ整える、窓辺のFika習慣」と定義しました。主役商品、価格、来店前の情報、Instagramへの導線まで含む判断根拠は [strategy.md](strategy.md) にまとめています。
+
+サイトには、以下の季節メニュー画像を追加しています。
+
+- `assets/img/menu/lemon-iced-coffee.png`
+- `assets/img/menu/berry-milk-soda.png`
+- `assets/img/menu/lemon-cardamom-cake.png`
+
 ## 品質メモ
 
 - 写真は2倍解像度相当で書き出し済み

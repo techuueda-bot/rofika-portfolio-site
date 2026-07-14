@@ -75,10 +75,14 @@
           <span class="hero__title-line"><span class="hero__title-word">FIKA</span></span>
         </h1>
         <p class="hero__copy">
-          <span class="hero__copy-line">光の入る、</span>
-          <span class="hero__copy-line">小さな夏のカフェ。</span>
+          <span class="hero__copy-line">ひとりの午後に、</span>
+          <span class="hero__copy-line">光る小さな休憩。</span>
         </p>
         <p class="hero__sub">cold drinks, baked sweets, and a window full of light.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#menu">今日のおすすめを見る</a>
+          <a class="button button--text" href="#info">営業情報を見る</a>
+        </div>
       </div>
 
       <figure class="hero__window" data-cursor>
@@ -102,8 +106,8 @@
         <p class="concept__text" data-illuminate>
           光の入る窓辺で、ひと息。<br>
           冷たい飲みものと、焼き菓子をそばに。<br>
-          外の光を眺めながら過ごす、小さな時間。<br>
-          ひとりで過ごす午後にも。
+          45分だけ、スマホを伏せて。<br>
+          ひとりで過ごす午後の、小さな習慣。
         </p>
         <p class="concept__en">a window full of light.</p>
       </div>
@@ -119,10 +123,33 @@
             <figure class="menu__photo js-reveal">
               <img src="assets/img/concept/window-dessert.jpg" alt="淡く重なる焼き菓子と甘い余韻" width="600" height="800" loading="lazy">
             </figure>
+            <p class="menu__note">季節の主役は、窓辺でいちばんおいしくなるものを。</p>
           </div>
         </div>
 
         <div class="menu__lists">
+          <div class="menu__spotlight" aria-labelledby="spotlight-title">
+            <div class="menu__spotlight-head">
+              <span class="section-en">This month's Fika</span>
+              <h3 id="spotlight-title">迷ったら、光のセット。</h3>
+              <p>対象ドリンク＋本日の焼き菓子を <strong>980円</strong>。ひとりの午後を、注文から整える。</p>
+            </div>
+            <div class="menu__feature-grid">
+              <a class="menu-feature" href="https://www.instagram.com/ro_fika_cafe/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/menu/lemon-iced-coffee.png" alt="窓辺の光の中に置かれたレモンアイスコーヒー" width="1024" height="1280" loading="lazy">
+                <span class="menu-feature__body"><strong>レモンアイスコーヒー</strong><small>signature drink / 680円</small></span>
+              </a>
+              <a class="menu-feature" href="https://www.instagram.com/ro_fika_cafe/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/menu/berry-milk-soda.png" alt="窓辺の光の中に置かれたベリーミルクソーダ" width="1024" height="1280" loading="lazy">
+                <span class="menu-feature__body"><strong>ベリーミルクソーダ</strong><small>seasonal color / 720円</small></span>
+              </a>
+              <a class="menu-feature" href="https://www.instagram.com/ro_fika_cafe/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/menu/lemon-cardamom-cake.png" alt="窓辺の光の中に置かれたレモンカルダモンケーキ" width="1024" height="1280" loading="lazy">
+                <span class="menu-feature__body"><strong>レモンケーキ</strong><small>cardamom bake / 420円</small></span>
+              </a>
+            </div>
+            <p class="menu__spotlight-link"><a href="https://www.instagram.com/ro_fika_cafe/" target="_blank" rel="noopener noreferrer">焼き上がりと季節の変更は Instagram（コンセプト）で見る <span aria-hidden="true">↗</span></a></p>
+          </div>
           <section class="menu-group" aria-labelledby="drinks-title">
             <header class="menu-group__head js-reveal">
               <h3 id="drinks-title" class="menu-group__title">冷たい飲みもの <small>cold drinks</small></h3>
@@ -234,7 +261,7 @@
         <div class="info__brand">
           <span class="section-en">Info</span>
           <h2 id="info-title" class="info__title">RO FIKA</h2>
-          <p class="info__copy">窓辺で、少しだけひと息。</p>
+          <p class="info__copy">窓辺で、少しだけひと息。<br><small>ひとり席あり / 予約不要</small></p>
           <div class="info__badge" aria-hidden="true">
             <svg viewBox="0 0 120 120">
               <defs>
@@ -251,13 +278,13 @@
           <dl class="info__list">
             <div class="js-reveal"><dt>Open</dt><dd>12:00 – 18:00</dd></div>
             <div class="js-reveal" data-delay="1"><dt>Close</dt><dd>Wednesday</dd></div>
-            <div class="js-reveal" data-delay="2"><dt>Place</dt><dd>窓辺のある小さな通り</dd></div>
+            <div class="js-reveal" data-delay="2"><dt>Place</dt><dd>窓辺のある小さな通り（架空の設定）</dd></div>
             <div class="js-reveal"><dt>Seats</dt><dd>12席ほど / ひとり席あり</dd></div>
             <div class="js-reveal" data-delay="1"><dt>Payment</dt><dd>Cash / Cashless</dd></div>
           </dl>
           <p class="info__instagram js-reveal" data-delay="2">
-            季節のメニューは Instagram へ<br>
-            <a href="https://www.instagram.com/ro_fika_cafe/" data-cursor>@rofika</a>
+            本日の焼き上がり・空席は Instagram へ<br>
+            <a href="https://www.instagram.com/ro_fika_cafe/" target="_blank" rel="noopener noreferrer" data-cursor>@rofika（コンセプト） <span aria-hidden="true">↗</span></a>
           </p>
         </address>
       </div>
@@ -269,6 +296,12 @@
       <p><small>&copy; 2026 RO FIKA — a fictional summer cafe.</small></p>
     </div>
   </footer>
+
+  <nav class="mobile-quick-nav" aria-label="来店前のクイックリンク">
+    <a href="#menu">Menu</a>
+    <a href="https://www.instagram.com/ro_fika_cafe/" target="_blank" rel="noopener noreferrer">写真を見る ↗</a>
+    <a href="#info">営業情報</a>
+  </nav>
 
   <div class="cursor" aria-hidden="true">
     <span class="cursor__dot"></span>
