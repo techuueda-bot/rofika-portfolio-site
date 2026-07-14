@@ -389,11 +389,15 @@ body.is-loaded .hero__scroll { animation: heroFade 1.2s var(--ease-out-expo) 1.9
 .light-set__includes { font-size: 14px; line-height: 2; }
 .light-set__includes strong { color: var(--color-light-dusk); font-size: 1.3em; font-weight: 400; }
 .light-set__choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-.light-set-choice { min-width: 0; }
+.light-set-choice { min-width: 0; color: inherit; text-decoration: none; }
 .light-set-choice img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-.light-set-choice figcaption { display: grid; gap: 2px; margin-top: 7px; line-height: 1.45; }
+.light-set-choice > span { display: grid; gap: 2px; margin-top: 7px; line-height: 1.45; }
 .light-set-choice strong { font-family: var(--font-display); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; }
 .light-set-choice small { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.06em; color: var(--color-muted); }
+.light-set-choice:hover img { transform: scale(1.035); }
+.light-set-choice img { transition: transform 0.35s var(--ease-out-expo); }
+.light-set-choice:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.light-set__hint { margin-top: -8px; font-size: 11px; color: var(--color-muted); }
 .light-set__cta { width: fit-content; min-height: 46px; padding-inline: 18px; font-size: 13px; }
 .menu__spotlight-link { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--color-line); font-size: 12px; color: var(--color-muted); }
 
@@ -421,6 +425,7 @@ body.is-loaded .hero__scroll { animation: heroFade 1.2s var(--ease-out-expo) 1.9
   transition: transform 0.5s var(--ease-out-expo);
 }
 .menu-item:hover { transform: translateX(8px); }
+.menu-item:target { background: color-mix(in srgb, var(--color-marker) 42%, transparent); box-shadow: inset 3px 0 0 var(--color-accent); }
 .menu-item__name { font-family: var(--font-display); font-size: 17px; letter-spacing: 0.12em; color: var(--color-ink); }
 .menu-item__en {
   font-family: var(--font-en); font-style: italic; font-size: 13px;
