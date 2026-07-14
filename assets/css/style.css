@@ -333,7 +333,25 @@ body.is-loaded .hero__scroll { animation: heroFade 1.2s var(--ease-out-expo) 1.9
 }
 
 @media (max-width: 767px) {
-  .hero__window { right: 20px; bottom: 96px; width: 108px; }
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: calc(var(--space) * 10) 24px calc(var(--space) * 13);
+  }
+  .hero__inner { padding-inline: 0; }
+  .hero__actions { flex-direction: column; gap: 14px; }
+  .hero__window {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(44vw, 168px);
+    margin: 28px auto 0;
+    flex: 0 0 auto;
+  }
+  .hero__scroll { bottom: 24px; }
 }
 
 /* --- 2. Concept: 文字点灯 --- */

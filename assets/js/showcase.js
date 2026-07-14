@@ -275,7 +275,7 @@
   /* ---- ヒーロー窓写真: 控えめパララックス ---- */
   function initHeroParallax() {
     var win = document.querySelector(".hero__window");
-    if (!win) return;
+    if (!win || window.matchMedia("(max-width: 767px)").matches) return;
     gsap.to(win, {
       yPercent: -14, ease: "none",
       scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
