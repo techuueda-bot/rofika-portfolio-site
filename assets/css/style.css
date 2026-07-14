@@ -366,29 +366,36 @@ body.is-loaded .hero__scroll { animation: heroFade 1.2s var(--ease-out-expo) 1.9
 }
 .menu__side-sticky { position: sticky; top: calc(var(--space) * 14); }
 .menu__title { font-size: clamp(24px, 3vw, 34px); margin-bottom: calc(var(--space) * 5); }
-.menu__photo {
-  width: min(280px, 70%);
-  border-radius: 999px 999px 3px 3px;
-  overflow: hidden;
-  border: 1px solid var(--color-line);
-}
-.menu__photo img { aspect-ratio: 3 / 4; object-fit: cover; }
 .menu__note { max-width: 24em; margin-top: 18px; color: var(--color-muted); font-size: 13px; line-height: 1.8; }
+.menu__guide { display: grid; gap: 10px; margin-top: 28px; max-width: 25em; }
+.menu__guide > div { padding-block: 10px; border-top: 1px solid var(--color-line); }
+.menu__guide > div:last-child { border-bottom: 1px solid var(--color-line); }
+.menu__guide dt { font-family: var(--font-en); font-style: italic; font-size: 13px; letter-spacing: 0.14em; color: var(--color-accent); }
+.menu__guide dd { margin: 2px 0 0; font-size: 12px; line-height: 1.7; color: var(--color-muted); }
 
-.menu__spotlight { margin-bottom: calc(var(--space) * 10); padding: 28px; background: color-mix(in srgb, var(--color-surface) 72%, transparent); border: 1px solid var(--color-line); }
+.menu__spotlight { margin-bottom: calc(var(--space) * 10); padding: clamp(20px, 3vw, 36px); background: color-mix(in srgb, var(--color-surface) 78%, transparent); border: 1px solid var(--color-line); }
 .menu__spotlight-head h3 { font-size: clamp(22px, 3vw, 32px); margin-bottom: 8px; }
 .menu__spotlight-head p { font-size: 13px; line-height: 1.9; max-width: 38em; }
 .menu__spotlight-head strong { color: var(--color-accent); font-weight: 500; }
-.menu__feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
-.menu-feature { display: block; color: inherit; text-decoration: none; background: var(--color-bg); overflow: hidden; border: 1px solid var(--color-line); }
-.menu-feature img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 0.7s var(--ease-out-expo); }
-.menu-feature:hover { opacity: 1; }
-.menu-feature:hover img { transform: scale(1.04); }
-.menu-feature__body { display: grid; gap: 2px; padding: 12px 12px 14px; }
-.menu-feature__body strong { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.08em; font-weight: 500; }
-.menu-feature__body small { color: var(--color-muted); font-family: var(--font-en); font-size: 12px; letter-spacing: 0.08em; }
-.menu__spotlight-link { margin-top: 18px; font-size: 12px; text-align: right; }
-.menu__spotlight-link a { color: var(--color-accent); text-underline-offset: 5px; }
+.light-set__layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr); gap: clamp(20px, 3vw, 36px); align-items: start; margin-top: 26px; }
+.light-set__visual { overflow: hidden; background: var(--color-bg); }
+.light-set__visual img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.light-set__visual figcaption { padding: 10px 12px; border: 1px solid var(--color-line); border-top: 0; font-family: var(--font-en); font-style: italic; font-size: 12px; letter-spacing: 0.12em; color: var(--color-muted); }
+.light-set__detail { display: grid; gap: 20px; align-content: start; }
+.light-set__price { display: flex; align-items: baseline; gap: 8px; padding-bottom: 14px; border-bottom: 1px solid var(--color-ink); color: var(--color-accent); line-height: 1; }
+.light-set__price span { font-family: var(--font-en); font-style: italic; font-size: 13px; letter-spacing: 0.16em; }
+.light-set__price strong { font-family: var(--font-en); font-size: clamp(54px, 6vw, 76px); font-weight: 300; letter-spacing: 0; }
+.light-set__price small { font-family: var(--font-en); font-size: 14px; letter-spacing: 0.12em; }
+.light-set__includes { font-size: 14px; line-height: 2; }
+.light-set__includes strong { color: var(--color-light-dusk); font-size: 1.3em; font-weight: 400; }
+.light-set__choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.light-set-choice { min-width: 0; }
+.light-set-choice img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.light-set-choice figcaption { display: grid; gap: 2px; margin-top: 7px; line-height: 1.45; }
+.light-set-choice strong { font-family: var(--font-display); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; }
+.light-set-choice small { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.06em; color: var(--color-muted); }
+.light-set__cta { width: fit-content; min-height: 46px; padding-inline: 18px; font-size: 13px; }
+.menu__spotlight-link { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--color-line); font-size: 12px; color: var(--color-muted); }
 
 .menu-group + .menu-group { margin-top: calc(var(--space) * 10); }
 .menu-group__head {
@@ -434,7 +441,6 @@ body.is-loaded .hero__scroll { animation: heroFade 1.2s var(--ease-out-expo) 1.9
 @media (max-width: 1023px) {
   .menu__layout { grid-template-columns: 1fr; }
   .menu__side-sticky { position: static; }
-  .menu__photo { display: none; }
 }
 
 /* --- 4. FIKA TIME(破調・光の移ろい) --- */
@@ -552,10 +558,12 @@ body.is-loaded .hero__scroll { animation: heroFade 1.2s var(--ease-out-expo) 1.9
   .hero__actions { flex-wrap: wrap; gap: 12px; margin-top: 24px; }
   .button { min-height: 42px; }
   .menu__spotlight { padding: 20px 16px; }
-  .menu__feature-grid { grid-template-columns: 1fr; gap: 16px; }
-  .menu-feature { display: grid; grid-template-columns: 112px 1fr; align-items: stretch; }
-  .menu-feature img { aspect-ratio: 1 / 1; height: 100%; }
-  .menu-feature__body { align-content: center; padding: 16px; }
+  .light-set__layout { grid-template-columns: 1fr; gap: 22px; }
+  .light-set__visual img { aspect-ratio: 4 / 3; }
+  .light-set__detail { gap: 18px; }
+  .light-set__choices { display: flex; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory; }
+  .light-set-choice { flex: 0 0 116px; scroll-snap-align: start; }
+  .light-set__cta { width: 100%; justify-content: center; }
   .info__layout { grid-template-columns: 1fr; }
 }
 

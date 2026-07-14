@@ -52,8 +52,8 @@ Galleryは2列、Footer Infoは1列表示にし、横スクロールが出ない
 - screenshots/rofika-01-hero.png
 - screenshots/rofika-02-concept-window.png
 - screenshots/rofika-03-menu.png
-- screenshots/rofika-04-fika-gallery.png
-- screenshots/rofika-05-footer.png
+- screenshots/rofika-04-fika-gallery.webp
+- screenshots/rofika-05-footer.webp
 - screenshots/rofika-mobile-01-hero.png
-- screenshots/rofika-mobile-02-gallery.png
+- screenshots/rofika-mobile-02-gallery.webp
 - screenshots/rofika-mobile-03-info.png

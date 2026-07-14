@@ -57,9 +57,10 @@ npx http-server . -p 8823
 
 サイトには、以下の季節メニュー画像を追加しています。
 
-- `assets/img/menu/lemon-iced-coffee.png`
-- `assets/img/menu/berry-milk-soda.png`
-- `assets/img/menu/lemon-cardamom-cake.png`
+- `assets/img/menu/light-set-v2.webp` — 光のセットの主役写真
+- `assets/img/menu/lemon-iced-coffee.webp`
+- `assets/img/menu/berry-milk-soda.webp`
+- `assets/img/menu/lemon-cardamom-cake.webp`
 
 ## 品質メモ
 
