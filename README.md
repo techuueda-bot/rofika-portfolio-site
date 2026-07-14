@@ -65,6 +65,8 @@ npx http-server . -p 8823
 - `assets/img/menu/berry-milk-soda.webp`
 - `assets/img/menu/lemon-cardamom-cake.webp`
 
+「光のセット」の枠は、商品の選択画面ではなく、セットの完成形と内容を伝える案内です。スマホでも横スクロールは使わず、`Drink` と `Bake` の2枚を少し重ねた静的な構成で、対象メニューへの導線を一つだけ置いています。全6品の写真・説明は、その下の通常メニューで確認できます。
+
 ## 品質メモ
 
 - 写真は2倍解像度相当で書き出し済み

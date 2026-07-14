@@ -144,27 +144,23 @@
               <div class="light-set__detail">
                 <p class="light-set__price"><span>FIKA SET</span><strong>980</strong><small>yen</small></p>
                 <p class="light-set__includes">対象ドリンクから1杯<br><strong>＋</strong> 本日の焼き菓子</p>
-                <div class="light-set__choices" aria-label="光のセットで選べる品目">
-                  <a class="light-set-choice" href="#menu-lemon-iced-coffee" aria-label="レモンアイスコーヒーのメニュー説明へ">
-                    <img src="assets/img/menu/lemon-iced-coffee.webp" alt="レモンアイスコーヒー" width="1024" height="1280" loading="lazy" decoding="async">
-                    <span><strong>レモンアイスコーヒー</strong><small>signature drink</small></span>
-                  </a>
-                  <a class="light-set-choice" href="#menu-berry-milk-soda" aria-label="ベリーミルクソーダのメニュー説明へ">
-                    <img src="assets/img/menu/berry-milk-soda.webp" alt="ベリーミルクソーダ" width="1024" height="1280" loading="lazy" decoding="async">
-                    <span><strong>ベリーミルクソーダ</strong><small>seasonal color</small></span>
-                  </a>
-                  <a class="light-set-choice" href="#menu-lemon-cardamom-cake" aria-label="レモンカルダモンケーキのメニュー説明へ">
-                    <img src="assets/img/menu/lemon-cardamom-cake.webp" alt="レモンカルダモンケーキ" width="1024" height="1280" loading="lazy" decoding="async">
-                    <span><strong>本日の焼き菓子</strong><small>lemon cardamom cake</small></span>
-                  </a>
-                </div>
-                <p class="light-set__hint">写真を選ぶと、各メニューの説明へ移動します。</p>
-                <a class="button button--primary light-set__cta" href="https://www.instagram.com/ro_fika_cafe/" target="_blank" rel="noopener noreferrer">今月の写真を見る <span aria-hidden="true">↗</span></a>
+                <dl class="light-set__composition" aria-label="光のセットの内容">
+                  <div class="light-set__component light-set__component--drink">
+                    <dt>Drink</dt>
+                    <dd>対象の冷たい飲みものから1杯</dd>
+                  </div>
+                  <div class="light-set__component light-set__component--bake">
+                    <dt>Bake</dt>
+                    <dd>本日の焼き菓子を1品</dd>
+                  </div>
+                </dl>
+                <p class="light-set__hint">対象のメニューは、下で写真とともにご覧いただけます。</p>
+                <a class="button button--primary light-set__cta" href="#menu-drinks">対象メニューを見る <span aria-hidden="true">↓</span></a>
               </div>
             </div>
             <p class="menu__spotlight-link">焼き上がりと季節の変更は Instagram（コンセプト）で更新します。</p>
           </section>
-          <section class="menu-group" aria-labelledby="drinks-title">
+          <section id="menu-drinks" class="menu-group" aria-labelledby="drinks-title" tabindex="-1">
             <header class="menu-group__head js-reveal">
               <h3 id="drinks-title" class="menu-group__title">冷たい飲みもの <small>cold drinks</small></h3>
               <p class="menu-group__price">650円〜</p>
