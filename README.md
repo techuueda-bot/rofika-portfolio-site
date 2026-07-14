@@ -71,3 +71,4 @@ npx http-server . -p 8823
 
 - 写真は2倍解像度相当で書き出し済み
 - 文字コードは全ファイルUTF-8(BOMなし)
+- GitHub Pagesでは `.nojekyll` により、静的HTML/CSS/JSをそのまま公開
